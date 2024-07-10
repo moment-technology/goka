@@ -304,14 +304,12 @@ func (v *View) hash(key string) (int32, error) {
 	if err != nil {
 		return -1, err
 	}
-	hash := int32(hasher.Sum32())
-	if hash < 0 {
-		hash = -hash
-	}
+
 	if len(v.partitions) == 0 {
 		return 0, errors.New("no partitions found")
 	}
-	return hash % int32(len(v.partitions)), nil
+
+	return int32(hasher.Sum32() % uint32(len(v.partitions))), nil
 }
 
 func (v *View) find(key string) (*PartitionTable, error) {
