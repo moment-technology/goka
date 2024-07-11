@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"hash"
+	"hash/crc32"
 	"log"
 	"strconv"
 	"sync/atomic"
@@ -126,6 +127,37 @@ func TestView_hash(t *testing.T) {
 
 		_, err := view.hash("a")
 		require.Error(t, err)
+	})
+}
+
+// FuzzView_hash checks for compatibility with librdkafka's partitioner. It
+// ensures view.hash always returns the same partition as a reference
+// implementation that is known to match librdkafka.
+func FuzzView_hash(f *testing.F) {
+	f.Add("US1234567890")
+	f.Fuzz(func(t *testing.T, key string) {
+		view, _, ctrl := createTestView(t, NewMockAutoConsumer(t, DefaultConfig()))
+		defer ctrl.Finish()
+
+		// 97 is the largest prime number smaller than 100.
+		numPartitions := 97
+		view.partitions = make([]*PartitionTable, 97)
+		view.opts.hasher = crc32.NewIEEE
+
+		// Reference implementation.
+		partitioner := sarama.NewCustomPartitioner(
+			sarama.WithCustomHashFunction(crc32.NewIEEE),
+			sarama.WithHashUnsigned(),
+		)
+
+		msg := sarama.ProducerMessage{Key: sarama.StringEncoder(key)}
+		expected, err := partitioner("topic").Partition(&msg, int32(numPartitions))
+		require.NoError(t, err)
+
+		actual, err := view.hash(key)
+		require.NoError(t, err)
+
+		require.Equal(t, expected, actual)
 	})
 }
 
