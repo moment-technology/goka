@@ -13,7 +13,12 @@ type ProducerBuilder func(brokers []string, clientID string, hasher func() hash.
 func DefaultProducerBuilder(brokers []string, clientID string, hasher func() hash.Hash32) (Producer, error) {
 	config := globalConfig
 	config.ClientID = clientID
-	config.Producer.Partitioner = sarama.NewCustomHashPartitioner(hasher)
+	config.Producer.Partitioner = sarama.NewCustomPartitioner(
+		sarama.WithCustomHashFunction(hasher),
+		// Treat the hashed value as unsigned for compatibility with the way
+		// librdkafka does partitioning.
+		sarama.WithHashUnsigned(),
+	)
 	return NewProducer(brokers, &config)
 }
 
@@ -21,7 +26,12 @@ func DefaultProducerBuilder(brokers []string, clientID string, hasher func() has
 func ProducerBuilderWithConfig(config *sarama.Config) ProducerBuilder {
 	return func(brokers []string, clientID string, hasher func() hash.Hash32) (Producer, error) {
 		config.ClientID = clientID
-		config.Producer.Partitioner = sarama.NewCustomHashPartitioner(hasher)
+		config.Producer.Partitioner = sarama.NewCustomPartitioner(
+			sarama.WithCustomHashFunction(hasher),
+			// Treat the hashed value as unsigned for compatibility with the way
+			// librdkafka does partitioning.
+			sarama.WithHashUnsigned(),
+		)
 		return NewProducer(brokers, config)
 	}
 }
