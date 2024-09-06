@@ -8,8 +8,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/web/templates"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/web/templates"
 
 	"github.com/gorilla/mux"
 )

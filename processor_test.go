@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"github.com/IBM/sarama"
-	"github.com/golang/mock/gomock"
+	"go.uber.org/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/lovoo/goka/codec"
-	"github.com/lovoo/goka/storage"
+	"github.com/moment-technology/goka/codec"
+	"github.com/moment-technology/goka/storage"
 )
 
 func createMockBuilder(t *testing.T) (*gomock.Controller, *builderMock) {

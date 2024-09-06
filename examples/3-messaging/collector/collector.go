@@ -3,9 +3,9 @@ package collector
 import (
 	"context"
 	"encoding/json"
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/examples/3-messaging"
-	"github.com/lovoo/goka/examples/3-messaging/topicinit"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/examples/3-messaging"
+	"github.com/moment-technology/goka/examples/3-messaging/topicinit"
 )
 
 const maxMessages = 5

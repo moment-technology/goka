@@ -8,11 +8,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/lovoo/goka/examples/3-messaging/blocker"
-	"github.com/lovoo/goka/examples/3-messaging/collector"
-	"github.com/lovoo/goka/examples/3-messaging/detector"
-	"github.com/lovoo/goka/examples/3-messaging/filter"
-	"github.com/lovoo/goka/examples/3-messaging/translator"
+	"github.com/moment-technology/goka/examples/3-messaging/blocker"
+	"github.com/moment-technology/goka/examples/3-messaging/collector"
+	"github.com/moment-technology/goka/examples/3-messaging/detector"
+	"github.com/moment-technology/goka/examples/3-messaging/filter"
+	"github.com/moment-technology/goka/examples/3-messaging/translator"
 	"golang.org/x/sync/errgroup"
 )
 

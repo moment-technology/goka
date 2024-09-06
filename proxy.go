@@ -1,7 +1,7 @@
 package goka
 
 import (
-	"github.com/lovoo/goka/storage"
+	"github.com/moment-technology/goka/storage"
 )
 
 type storageProxy struct {

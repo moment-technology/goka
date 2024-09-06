@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/codec"
-	"github.com/lovoo/goka/tester"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/codec"
+	"github.com/moment-technology/goka/tester"
 	"github.com/stretchr/testify/require"
 )
 
@@ -304,11 +304,11 @@ import (
 	"time"
 
 	"github.com/facebookgo/ensure"
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/codec"
-	"github.com/lovoo/goka/mock"
-	"github.com/lovoo/goka/storage"
-	"github.com/lovoo/goka/tester"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/codec"
+	"github.com/moment-technology/goka/mock"
+	"github.com/moment-technology/goka/storage"
+	"github.com/moment-technology/goka/tester"
 )
 
 func doTimed(t *testing.T, do func()) error {

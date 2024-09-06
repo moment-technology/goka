@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/lovoo/goka/storage"
+	"github.com/moment-technology/goka/storage"
 
 	redis "gopkg.in/redis.v5"
 )

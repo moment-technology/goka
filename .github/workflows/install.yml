@@ -22,14 +22,14 @@ jobs:
         run: |
           set +x
           go mod init test
-          go get github.com/lovoo/goka@master
+          go get github.com/moment-technology/goka@master
           cat > main.go << EndOfMessage
           package main
 
           import (
             "context"
 
-            "github.com/lovoo/goka"
+            "github.com/moment-technology/goka"
           )
           func main() {
             proc, _ := goka.NewProcessor(nil, goka.DefineGroup("test"))

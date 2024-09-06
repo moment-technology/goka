@@ -1,6 +1,6 @@
 package query
 
-import "github.com/lovoo/goka"
+import "github.com/moment-technology/goka"
 
 // Option is a function that applies a configuration to the server.
 type Option func(s *Server)

@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/codec"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/codec"
 )
 
 var (
