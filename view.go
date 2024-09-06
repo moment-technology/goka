@@ -309,6 +309,9 @@ func (v *View) hash(key string) (int32, error) {
 		return 0, errors.New("no partitions found")
 	}
 
+	// Treat the hashed value as unsigned before converting it modulo the number
+	// of partitions to a signed integer. This is for compatibility with the way
+	// librdkafka does partitioning.
 	return int32(hasher.Sum32() % uint32(len(v.partitions))), nil
 }
 
