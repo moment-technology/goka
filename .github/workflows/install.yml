@@ -22,7 +22,8 @@ jobs:
         run: |
           set +x
           go mod init test
-          go get github.com/moment-technology/goka@master
+          LONG_REF=${{ github.head_ref && github.head_ref || github.ref }}
+          GOPRIVATE=github.com/moment-technology/goka go get github.com/moment-technology/goka@${LONG_REF#refs/*/}
           cat > main.go << EndOfMessage
           package main
 
