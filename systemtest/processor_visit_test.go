@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/codec"
-	"github.com/lovoo/goka/storage"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/codec"
+	"github.com/moment-technology/goka/storage"
 	"github.com/stretchr/testify/require"
 )
 

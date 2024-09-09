@@ -8,8 +8,8 @@ import (
 
 	"github.com/IBM/sarama"
 	"github.com/hashicorp/go-multierror"
-	"github.com/lovoo/goka/multierr"
-	"github.com/lovoo/goka/storage"
+	"github.com/moment-technology/goka/multierr"
+	"github.com/moment-technology/goka/storage"
 )
 
 const (

@@ -16,13 +16,13 @@ import (
 
 	"github.com/IBM/sarama"
 	"github.com/gorilla/mux"
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/codec"
-	"github.com/lovoo/goka/multierr"
-	"github.com/lovoo/goka/web/actions"
-	"github.com/lovoo/goka/web/index"
-	"github.com/lovoo/goka/web/monitor"
-	"github.com/lovoo/goka/web/query"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/codec"
+	"github.com/moment-technology/goka/multierr"
+	"github.com/moment-technology/goka/web/actions"
+	"github.com/moment-technology/goka/web/index"
+	"github.com/moment-technology/goka/web/monitor"
+	"github.com/moment-technology/goka/web/query"
 )
 
 var (

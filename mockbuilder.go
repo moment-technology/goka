@@ -6,9 +6,9 @@ import (
 	"hash"
 	"testing"
 
-	"github.com/golang/mock/gomock"
+	"go.uber.org/mock/gomock"
 
-	"github.com/lovoo/goka/storage"
+	"github.com/moment-technology/goka/storage"
 )
 
 var (

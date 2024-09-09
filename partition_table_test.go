@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/IBM/sarama"
-	"github.com/golang/mock/gomock"
-	"github.com/lovoo/goka/storage"
+	"go.uber.org/mock/gomock"
+	"github.com/moment-technology/goka/storage"
 	"github.com/stretchr/testify/require"
 )
 

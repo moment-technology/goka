@@ -27,7 +27,7 @@ var (
 // * github.com/lovoo/goka/subpackage/file.go
 // this regex is used to filter out entries from the stack trace that origin
 // from the root-package of go (but not the subpackages, otherwise we would not see the stack in the example-tests)
-// reflect.TypeOf(Processor{}).PkgPath() returns (in the main repo) "github.com/lovoo/goka"
+// reflect.TypeOf(Processor{}).PkgPath() returns (in the main repo) "github.com/moment-technology/goka"
 var gokaPackageRegex = regexp.MustCompile(fmt.Sprintf(`%s(?:@[^/]+)?/[^/]+$`, reflect.TypeOf(Processor{}).PkgPath()))
 
 // ErrVisitAborted indicates a call to VisitAll could not finish due to rebalance or processor shutdown

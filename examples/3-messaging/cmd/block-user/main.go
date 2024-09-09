@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/examples/3-messaging/blocker"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/examples/3-messaging/blocker"
 )
 
 var (

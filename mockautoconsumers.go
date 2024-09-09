@@ -10,7 +10,7 @@ import (
 
 	"github.com/IBM/sarama"
 	"github.com/hashicorp/go-multierror"
-	"github.com/lovoo/goka/multierr"
+	"github.com/moment-technology/goka/multierr"
 )
 
 const (

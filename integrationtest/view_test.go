@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/codec"
-	"github.com/lovoo/goka/tester"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/codec"
+	"github.com/moment-technology/goka/tester"
 	"github.com/stretchr/testify/require"
 )
 

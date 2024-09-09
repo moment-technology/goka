@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lovoo/goka"
-	"github.com/lovoo/goka/storage"
+	"github.com/moment-technology/goka"
+	"github.com/moment-technology/goka/storage"
 )
 
 var (
